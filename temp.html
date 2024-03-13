@@ -63,7 +63,7 @@ function addExperience() {
   var experiencesDiv = document.getElementById('experiences');
   var newExperience = document.createElement('div');
   newExperience.classList.add('experience');
-  newExperience.innerHTML = <p>${experienceText}</p>;
+  newExperience.innerHTML = `<p>${experienceText}</p>`;
   experiencesDiv.insertBefore(newExperience, experiencesDiv.firstChild);
   
   document.getElementById('userExperienceInput').value = ''; // Clear the textarea
@@ -84,7 +84,7 @@ window.onload = function() {
     var experiencesDiv = document.getElementById('experiences');
     var experience = document.createElement('div');
     experience.classList.add('experience');
-    experience.innerHTML = <p>${text}</p>;
+    experience.innerHTML = `<p>${text}</p>`;
     experiencesDiv.appendChild(experience);
   });
 };
