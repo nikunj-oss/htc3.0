@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Experiences</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  #commentBox {
+    margin-bottom: 20px;
+  }
+  textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .experience {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-left: 5px solid #4CAF50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .experience:nth-child(even) {
+    border-left-color: #2196F3;
+  }
+</style>
+</head>
+<body>
+
+<div id="commentBox">
+  <h2>Share Your Experience</h2>
+  <textarea id="userExperienceInput" placeholder="Write about your mental health journey..."></textarea>
+  <button onclick="addExperience()">Add Experience</button>
+</div>
+
+<h1>User Experiences</h1>
+<div id="experiences">
+
+<!-- Dynamic experiences will be added here -->
+
+</div>
+
+<script>
+function addExperience() {
+  var experienceText = document.getElementById('userExperienceInput').value;
+  if (experienceText.trim() === '') {
+    alert('Please write something about your experience.');
+    return;
+  }
+  
+  var experiencesDiv = document.getElementById('experiences');
+  var newExperience = document.createElement('div');
+  newExperience.classList.add('experience');
+  newExperience.innerHTML = <p>${experienceText}</p>;
+  experiencesDiv.insertBefore(newExperience, experiencesDiv.firstChild);
+  
+  document.getElementById('userExperienceInput').value = ''; // Clear the textarea
+}
+
+// Adding initial fake experiences
+const fakeExperiences = [
+  "I struggled with anxiety for years, feeling overwhelmed by even small tasks. Discovering mindfulness and meditation profoundly changed my life.",
+  "Depression made it hard for me to enjoy life. Therapy and the support of loved ones helped me regain my joy in living.",
+  "Dealing with bipolar disorder has been a rollercoaster. Medication, regular therapy, and a strong support system have given me stability.",
+  "Overcoming social anxiety was a journey of self-acceptance and courage. Joining a support group allowed me to connect with others and grow in confidence.",
+  "After a traumatic event, I suffered from PTSD. Therapy, particularly EMDR, helped me process these events and significantly reduced my symptoms.",
+  // Add more fake experiences as needed
+];
+
+window.onload = function() {
+  fakeExperiences.forEach(text => {
+    var experiencesDiv = document.getElementById('experiences');
+    var experience = document.createElement('div');
+    experience.classList.add('experience');
+    experience.innerHTML = <p>${text}</p>;
+    experiencesDiv.appendChild(experience);
+  });
+};
+</script>
+
+</body>
+</html>
