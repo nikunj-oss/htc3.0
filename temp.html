@@ -1,94 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Experiences</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #fED8D7;
-    padding: 20px;
-  }
-  #commentBox {
-    margin-bottom: 20px;
-  }
-  textarea {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  .experience {
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-left: 5px solid #4CAF50;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  .experience:nth-child(even) {
-    border-left-color: #2196F3;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Experiences</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- style css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!--quote csss-->
+  <link rel="stylesheet" href="css/quote.css">
+  <!-- fevicon -->
+  <link rel="icon" href="images/Folina favicon.png" type="image/gif" />
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <!-- owl stylesheets -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+    media="screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fED8D7;
+      padding: 20px;
+    }
+
+    #commentBox {
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .experience {
+      background-color: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-left: 5px solid #4CAF50;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience:nth-child(even) {
+      border-left-color: #2196F3;
+    }
+  </style>
 </head>
+
 <body>
 
-<div id="commentBox">
-  <h2>Share Your Experience</h2>
-  <textarea id="userExperienceInput" placeholder="Write about your mental health journey..."></textarea>
-  <button onclick="addExperience()">Add Experience</button>
-</div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="logo"><a href="index.html"><img src="images/avicon.png"></a></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse try12" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="useful_links.html">Useful links</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="temp.html">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>User Experiences</h1>
-<div id="experiences">
+  <div id="commentBox">
+    <h2>Share Your Experience</h2>
+    <textarea id="userExperienceInput" placeholder="Write about your mental health journey..."></textarea>
+    <button onclick="addExperience()">Add Experience</button>
+  </div>
 
-<!-- Dynamic experiences will be added here -->
+  <h1>User Experiences</h1>
+  <div id="experiences">
 
-</div>
+    <!-- Dynamic experiences will be added here -->
 
-<script>
-function addExperience() {
-  var experienceText = document.getElementById('userExperienceInput').value;
-  if (experienceText.trim() === '') {
-    alert('Please write something about your experience.');
-    return;
-  }
-  
-  var experiencesDiv = document.getElementById('experiences');
-  var newExperience = document.createElement('div');
-  newExperience.classList.add('experience');
-  newExperience.innerHTML = `<p>${experienceText}</p>`;
-  experiencesDiv.insertBefore(newExperience, experiencesDiv.firstChild);
-  
-  document.getElementById('userExperienceInput').value = ''; // Clear the textarea
-}
+  </div>
 
-// Adding initial fake experiences
-const fakeExperiences = [
-  "I struggled with anxiety for years, feeling overwhelmed by even small tasks. Discovering mindfulness and meditation profoundly changed my life.",
-  "Depression made it hard for me to enjoy life. Therapy and the support of loved ones helped me regain my joy in living.",
-  "Dealing with bipolar disorder has been a rollercoaster. Medication, regular therapy, and a strong support system have given me stability.",
-  "Overcoming social anxiety was a journey of self-acceptance and courage. Joining a support group allowed me to connect with others and grow in confidence.",
-  "After a traumatic event, I suffered from PTSD. Therapy, particularly EMDR, helped me process these events and significantly reduced my symptoms.",
-  // Add more fake experiences as needed
-];
+  <script>
+    function addExperience() {
+      var experienceText = document.getElementById('userExperienceInput').value;
+      if (experienceText.trim() === '') {
+        alert('Please write something about your experience.');
+        return;
+      }
 
-window.onload = function() {
-  fakeExperiences.forEach(text => {
-    var experiencesDiv = document.getElementById('experiences');
-    var experience = document.createElement('div');
-    experience.classList.add('experience');
-    experience.innerHTML = `<p>${text}</p>`;
-    experiencesDiv.appendChild(experience);
-  });
-};
-</script>
+      var experiencesDiv = document.getElementById('experiences');
+      var newExperience = document.createElement('div');
+      newExperience.classList.add('experience');
+      newExperience.innerHTML = `<p>${experienceText}</p>`;
+      experiencesDiv.insertBefore(newExperience, experiencesDiv.firstChild);
+
+      document.getElementById('userExperienceInput').value = ''; // Clear the textarea
+    }
+
+    // Adding initial fake experiences
+    const fakeExperiences = [
+      "I struggled with anxiety for years, feeling overwhelmed by even small tasks. Discovering mindfulness and meditation profoundly changed my life.",
+      "Depression made it hard for me to enjoy life. Therapy and the support of loved ones helped me regain my joy in living.",
+      "Dealing with bipolar disorder has been a rollercoaster. Medication, regular therapy, and a strong support system have given me stability.",
+      "Overcoming social anxiety was a journey of self-acceptance and courage. Joining a support group allowed me to connect with others and grow in confidence.",
+      "After a traumatic event, I suffered from PTSD. Therapy, particularly EMDR, helped me process these events and significantly reduced my symptoms.",
+      // Add more fake experiences as needed
+    ];
+
+    window.onload = function () {
+      fakeExperiences.forEach(text => {
+        var experiencesDiv = document.getElementById('experiences');
+        var experience = document.createElement('div');
+        experience.classList.add('experience');
+        experience.innerHTML = `<p>${text}</p>`;
+        experiencesDiv.appendChild(experience);
+      });
+    };
+  </script>
 
 </body>
+
 </html>
